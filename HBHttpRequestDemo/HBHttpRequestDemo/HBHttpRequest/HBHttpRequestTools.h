@@ -10,4 +10,7 @@
 
 @interface HBHttpRequestTools : HBBaseHttpRequest
 
+
+-(void)postRequestWithPath:(NSString*)path Para:(NSDictionary*)padDic finishBlock:(FinishHandlerBlock)handlerBlock;
+
 @end

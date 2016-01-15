@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "HBHttpRequestTools.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+   
+    [[HBHttpRequestTools new] postRequestWithPath:@"/WebProject_1001/test" Para:nil finishBlock:^(NSDictionary *responseDic, ErrorCode errorCode) {
+        NSLog(@"%@",responseDic);
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning {

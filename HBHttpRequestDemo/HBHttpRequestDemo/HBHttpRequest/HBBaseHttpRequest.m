@@ -99,8 +99,8 @@
 {
     AFHTTPRequestOperationManager * manager = [AFHTTPRequestOperationManager manager];
     
-    AFHTTPRequestOperation *operation=[manager POST:urlStr  parameters:dic[@"paraDic"] constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
-        [formData appendPartWithFileData:dic[@"images"]
+    AFHTTPRequestOperation *operation=[manager POST:urlStr  parameters:dic[@"para"] constructingBodyWithBlock:^(id<AFMultipartFormData> formData){
+        [formData appendPartWithFileData:dic[@"imageData"]
                                     name:@"images"
                                 fileName:@"image"
                                 mimeType:@"image/png"];

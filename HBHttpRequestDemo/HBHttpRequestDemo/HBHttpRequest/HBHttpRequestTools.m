@@ -16,4 +16,33 @@
     [self getHttpRequest:padDic andUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,port]];
     self.handlerBlock = handlerBlock;
 }
+
+
+-(void)getRequestWithPath:(NSString*)path Para:(NSDictionary*)padDic finishBlock:(FinishHandlerBlock)handlerBlock
+{
+    if (path == nil) {
+        path = @"";
+    }
+    [self getHttpRequest:padDic andUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,path]];
+    self.handlerBlock = handlerBlock;
+}
+
+-(void)postRequestWithPath:(NSString*)path Para:(NSDictionary*)padDic finishBlock:(FinishHandlerBlock)handlerBlock
+{
+    if (path == nil) {
+        path = @"";
+    }
+    [self postHttpRequest:padDic andUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,path]];
+    self.handlerBlock = handlerBlock;
+}
+
+-(void)postFileRequestWithPath:(NSString*)path Para:(NSDictionary*)padDic ProgressBlock:(ProgressBlock)progressBlock
+{
+    if (path == nil) {
+        path = @"";
+    }
+    [self postHttpRequest:padDic andUrl:[NSString stringWithFormat:@"%@%@",BASE_URL,path]];
+    [self postFileHttpRequest:padDic url: [NSString stringWithFormat:@"%@%@",BASE_URL,path]userName:nil progressBlock:progressBlock];
+     
+}
 @end

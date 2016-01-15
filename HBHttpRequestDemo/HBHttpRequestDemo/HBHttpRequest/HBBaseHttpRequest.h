@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
-#define BASE_URL @"http://api.map.baidu.com"
+#define BASE_URL @"http://localhost:8080"
 #define TIME_OUT_INTERVAL 10;
 #define TIME_OUT_INTERVAL_UPLOAD 30
 typedef NS_ENUM(NSUInteger, ErrorCode) {
